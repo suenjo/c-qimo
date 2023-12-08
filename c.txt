@@ -1,0 +1,33 @@
+#include "myheader.h"
+
+int main(int argc, const char * argv[]) {
+
+    int data[SIZE] = {0};
+    int key = 0;
+    
+    srand((unsigned)(time(NULL)));
+    for(int i = 0;i<SIZE;i++){
+        data[i] = rand()%99+1;
+    }
+    display("정렬 전 배열 값 : ", data, SIZE);
+    
+    sort(data,SIZE);
+    
+    printf("탐색 할 값을 입력 : ");
+    scanf("%d",&key);
+    
+    search(data,key,SIZE);
+    
+    return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define SIZE 10
+
+void display(char*,int*,int);
+void sort(int*,int);
+void search(int*,int,int);
